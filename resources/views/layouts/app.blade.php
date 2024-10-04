@@ -4,27 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="{{url('assets/css/bootstrap.min.css')}}" rel="stylesheet"
+    <title>Carier Center</title>
+    <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-2  border-bottom">
+    <header class="d-flex flex-wrap justify-content-center py-2  border-bottom">
+        <div class="container">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="{{url('assets/img/logostikes.png')}}" alt="logostikes" style="width: 50px;">
-                <span class="fs-4 ms-2">Carier Center</span>
+                <img src="{{ url('assets/img/logostikes.png') }}" alt="logostikes" style="width: 50px;">
+                <span class="fs-4 fw-bold ms-2">Carier Center</span>
             </a>
 
             <ul class="nav ">
                 <!-- <p class="text-end">Log Out</p> -->
-
             </ul>
-        </header>
-    </div>
-    <nav class="navbar sticky-bottom navbar-expand-lg bg-body-tertiary p-0">
+        </div>
+    </header>
+
+    <nav class="navbar sticky-bottom navbar-expand-lg bg-body-tertiary p-0 shadow">
         <div class="container-fluid">
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">Dashboard</a>
+                        <a wire:navigate class="nav-link active" aria-current="page" href="{{ route('dashboard') }}">Dashboard</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -42,8 +42,8 @@
                             Blog
                         </a>
                         <ul class="dropdown-menu p-0">
-                            <li><a class="dropdown-item" href="{{route('category.index')}}">Category</a></li>
-                            <li><a class="dropdown-item" href="#">Post</a></li>
+                            <li><a wire:navigate class="dropdown-item" href="{{ route('category.index') }}">Category</a></li>
+                            <li><a wire:navigate class="dropdown-item" href="{{ route('post.index') }}">Post</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -53,7 +53,7 @@
     </nav>
 
     <!-- CONTENT START HERE -->
-    {{$slot}}
+    {{ $slot }}
     <!-- CONTENT END HERE -->
 
     <footer>
@@ -72,11 +72,11 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script data-navigate-once src="{{url('assets/js/bootstrap.bundle.min.js')}}"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script data-navigate-once src="{{ url('assets/js/bootstrap.bundle.min.js') }}"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

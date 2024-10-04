@@ -4,10 +4,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-8">
-                        <p class="fs-2 fw-bold">Category</p>
+                        <p class="fs-2 fw-bold">Post</p>
                     </div>
-                    <div class="col-4 text-end"> <a wire:navigate href="{{ route('category.create') }}"
-                            class="btn btn-sm btn-primary">Add Category</a> </div>
+                    <div class="col-4 text-end"> <a wire:navigate href="{{ route('post.create') }}"
+                            class="btn btn-sm btn-primary">Add Post</a> </div>
                 </div>
 
 
@@ -25,18 +25,20 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>
-                                            <th scope="col">Category Name</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Category</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($categories as $item)
+                                        @foreach ($post as $item)
                                             <tr>
                                                 <th scope="row">{{ $loop->iteration }}</th>
-                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->title }}</td>
+                                                <td>{{ $item->category->name }}</td>
                                                 <td>
                                                     <div class="d-flex gap-2">
-                                                        <a wire:navigate href="{{ route('category.edit', $item->id) }}"
+                                                        <a wire:navigate href="{{ route('post.edit', $item->id) }}"
                                                             class="btn btn-warning btn-sm ">
                                                             <i class="bx bx-edit"></i> Edit
                                                         </a>

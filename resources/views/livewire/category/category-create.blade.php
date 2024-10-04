@@ -4,7 +4,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-8">
-                        <p class="fs-2 fw-bold">Edit Category</p>
+                        <p class="fs-2 fw-bold">Add Category</p>
                     </div>
                     <div class="col-4 text-end"> <a wire:navigate href="{{ route('category.index') }}"
                             class="btn btn-sm btn-secondary">Back</a> </div>
